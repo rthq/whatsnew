@@ -1,5 +1,6 @@
 require "whatsnew/version"
 require "whatsnew/configuration"
+require "whatsnew/release"
 
 module Whatsnew
   class << self
