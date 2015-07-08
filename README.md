@@ -1,28 +1,64 @@
 # Whatsnew
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/whatsnew`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+What's new is a gem for maintaining structured release notes in your source tree. It supports release abstracts and release variants.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'whatsnew'
+gem 'whatsnew', git: 'git@roundtablehq.git.beanstalkapp.com:/roundtablehq/gem-whats-new.git'
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install whatsnew
-
 ## Usage
 
-TODO: Write usage instructions here
+### Configure releases folder
+
+Set the directory containing release markdown. In rails create a `config/initializers/whatsnew.rb` with the following content.
+
+```ruby
+Whatsnew.configure do |config|
+  config.releases_dir = Rails.root.join('config', 'releases')
+end
+```
+
+### Create release notes
+
+Create markdown release notes in the releases folder. These following a naming convention `release-#{@version}.md"`
+
+Add versions to `releases.yml` (also in the releases directory)
+
+```yaml
+# Put each new release number at the top of this file
+- "5.0.1"
+- "5.0.0"
+- "4.3.2"
+- "4.2.1"
+```
+
+### Reference in your application code
+
+Access the full list of releases
+
+```ruby
+Whatsnew::Release.all
+```
+
+Show the latest release
+
+```ruby
+Whatsnew::Release.last
+```
+
+Access a release abstract
+
+```ruby
+Whatsnew::Release.last.abstract
+```
 
 ## Development
 
