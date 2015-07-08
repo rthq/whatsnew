@@ -30,6 +30,16 @@ end
 
 Create markdown release notes in the releases folder. These following a naming convention `release-#{@version}.md"`
 
+```
+$ tree test/examples/
+test/examples/
+├── release-5.0.0.md
+├── release-5.0.0.starwood.md
+├── release-5.0.1.md
+├── release-abstract-5.0.0.md
+└── releases.yml
+```
+
 Add versions to `releases.yml` (also in the releases directory)
 
 ```yaml
