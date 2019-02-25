@@ -7,7 +7,7 @@ What's new is a gem for maintaining structured release notes in your source tree
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'whatsnew', git: 'git@roundtablehq.git.beanstalkapp.com:/roundtablehq/gem-whats-new.git'
+gem 'whatsnew', git: 'https://github.com/rthq/whatsnew'
 ```
 
 And then execute:
@@ -78,7 +78,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/whatsnew/fork )
+1. Fork it ( https://github.com/rthq/whatsnew/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
